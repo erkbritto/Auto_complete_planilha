@@ -1,12 +1,15 @@
 from selenium.webdriver.common.by import By
 import time
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def login(driver):
 
     # Defina suas credenciais
-    username = os.environ.get("EMAIL")  # Substitua com seu nome de usuário
-    password = os.environ.get("PASS")  # Substitua com sua senha
+    username = os.getenv("EMAIL")  # Substitua com seu nome de usuário
+    password = os.getenv("PASS")  # Substitua com sua senha
 
     # Defina suas credenciais    
     url = "https://jobhomeniodigital.talkdeskid.com/login"
