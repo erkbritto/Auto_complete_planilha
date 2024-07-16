@@ -5,8 +5,8 @@ import os
 def login(driver):
 
     # Defina suas credenciais
-    username = os.environ.EMAIL  # Substitua com seu nome de usuário
-    password = os.environ.PASS  # Substitua com sua senha
+    username = os.environ.get("EMAIL")  # Substitua com seu nome de usuário
+    password = os.environ.get("PASS")  # Substitua com sua senha
 
     # Defina suas credenciais    
     url = "https://jobhomeniodigital.talkdeskid.com/login"
