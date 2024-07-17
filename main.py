@@ -1,4 +1,4 @@
-from basics.helper_xlsx import HelperXlsx, INTERACTION_ID
+from basics.helper_xlsx import HelperXlsx, INTERACTION_ID, OPCAO_SELECIONADA, JORNADA_DO_CLIENTE_NO_CHATBOT, FINALIZACAO_DO_CONTATO
 from basics.get_file_name import get_file_name
 from basics.find_ticket_by_id import find_ticket_by_id
 from basics.getAnalyzers import getAnalyzers
