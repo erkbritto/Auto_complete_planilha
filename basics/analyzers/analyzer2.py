@@ -1,12 +1,10 @@
-from abc import AbstractClass, abstractmethod
-from typing import List, Dict
+from analyzer import ChatbotAnalyzer
 from basics.find_ticket_by_id import Message
+from typing import List, Dict
 
-class ChatbotAnalyzer(AbstractClass):
-    @abstractmethod
+class Analyzer2(ChatbotAnalyzer) :
     def isValid(self, messages: List[Message]) -> bool:
         pass
 
-    @abstractmethod
     def getQualifications(self, messages: List[Message]) -> Dict[str, str]:
         pass
