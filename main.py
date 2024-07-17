@@ -1,19 +1,9 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
-from basics.login import login
 from basics.helper_xlsx import HelperXlsx, INTERACTION_ID
 from basics.get_file_name import get_file_name
 from basics.find_ticket_by_id import find_ticket_by_id
-from typing import List
 from basics.getAnalyzers import getAnalyzers
 
 fileName:str = get_file_name()
-
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-
-# Faça login
-login(driver)
 
 # Instancia a classe para lidar com o xlsx
 helperXlsx = HelperXlsx()
