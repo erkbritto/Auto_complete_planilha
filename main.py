@@ -18,7 +18,7 @@ for line in file[1:]:
     messages = find_ticket_by_id(line[INTERACTION_ID])
 
     # pula os vazios
-    if INTERACTION_ID == None:
+    if INTERACTION_ID is None:
         continue
 
     # instancia o analisador
