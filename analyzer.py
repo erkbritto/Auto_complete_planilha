@@ -1,16 +1,12 @@
-from abc import ABC, abstractmethod
+from abc import AbstractClass, abstractmethod
 from typing import List, Dict
+from basics.find_ticket_by_id import Message
 
-class Mensagem:
-    def __init__(self, sender: str, message: str):
-        self.sender = sender
-        self.message = message
-
-class ChatbotAnalyzer(ABC):
+class ChatbotAnalyzer(AbstractClass):
     @abstractmethod
-    def verifyStructure(self, messages: List[Mensagem]) -> bool:
+    def verifyStructure(self, messages: List[Message]) -> bool:
         pass
 
     @abstractmethod
-    def getQualifications(self, messages: List[Mensagem]) -> Dict[str, str]:
+    def getQualifications(self, messages: List[Message]) -> Dict[str, str]:
         pass
