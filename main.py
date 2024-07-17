@@ -5,6 +5,9 @@ from basics.login import login
 from basics.helper_xlsx import HelperXlsx, INTERACTION_ID
 from basics.get_file_name import get_file_name
 from basics.find_ticket_by_id import find_ticket_by_id
+from typing import List
+from basics.getAnalyzers import getAnalyzers
+from analyzer import ChatbotAnalyzer
 
 fileName:str = get_file_name()
 
@@ -26,9 +29,9 @@ for line in file[1:]:
     messages = find_ticket_by_id(line[INTERACTION_ID])
 
     # instancia o analisador
-    analyzers:List[analyzer] = getAnalizers()
+    analyzers:List[ChatbotAnalyzer] = getAnalyzers()
     
-    for(analyzer in analyzers):
+    for analyzer in analyzers:
 
         # Pula caso a estrutura não seja valida
         if not analyzer.isValid(messages):
