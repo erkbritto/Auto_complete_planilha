@@ -53,8 +53,8 @@ def find_ticket_by_id(id) -> List[Message]:
                 }))
 
             return messages
-        except:
-            print('Token inválido. Atualizando...')
+        except Exception as e:
+            print('Token inválido. Atualizando...', e)
             update_token()
 
 
