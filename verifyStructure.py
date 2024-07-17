@@ -43,10 +43,21 @@ class Analyzer1:
             selected_option_text = "Sem opções selecionadas"
         elif num_options == 1:
             selected_option_text = "Selecionou apenas 1 opção"
-        elif num_options <= 8:
-            selected_option_text = f"Selecionou {num_options} opções no menu"
-        else:
-            selected_option_text = "Acima de 8 opções no menu"
+        elif num_options == 2:
+            selected_option_text = "Selecionou 2 opções"
+        elif num_options == 3:
+            selected_option_text = "Selecionou 3 opções"
+        elif num_options == 4:
+            selected_option_text = "Selecionou 4 opções"
+        elif num_options == 4:
+            selected_option_text = "Selecionou 5 opções"
+        elif num_options == 4:
+            selected_option_text = "Selecionou 6 opções"
+        elif num_options == 4:
+            selected_option_text = "Selecionou 7 opções"
+        elif num_options >= 8:
+            selected_option_text = "Selecionou mais de 8 opções no menu"
+        pass
 
         finalization_text = "Não encontrou opção de finalização de contato"
         for chat in messages:
