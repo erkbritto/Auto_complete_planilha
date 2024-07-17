@@ -56,8 +56,3 @@ def find_ticket_by_id(id) -> List[Message]:
         except Exception as e:
             print('Token inválido. Atualizando...', e)
             update_token()
-
-
-
-# 117ab2be-0835-42a1-8303f0811eefb6c3 gerado
-# 117ab2be-0835-42a1-8303-f0811eefb6c3 Original

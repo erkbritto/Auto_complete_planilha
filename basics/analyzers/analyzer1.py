@@ -4,7 +4,7 @@ from basics.qualification import Qualification
 
 class Analyzer1 :
     def isValid(self, messages: List[Message]) -> bool:
-        pass
+        return False
 
     def getQualifications(self, messages: List[Message]) -> Qualification:
         pass
