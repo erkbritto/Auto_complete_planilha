@@ -17,6 +17,10 @@ for line in file[1:]:
     # Forma de obter(e definir os dados do ticket)
     messages = find_ticket_by_id(line[INTERACTION_ID])
 
+    # pula os vazios
+    if INTERACTION_ID == None:
+        continue
+
     # instancia o analisador
     analyzers = getAnalyzers()
     
@@ -33,8 +37,9 @@ for line in file[1:]:
         line[OPCAO_SELECIONADA] = qualifications.selectedOption
         line[JORNADA_DO_CLIENTE_NO_CHATBOT] = qualifications.customerJourney
         line[FINALIZACAO_DO_CONTATO] = qualifications.finalizationOfTheContract
-
-
+        
+        # Salva o arquivo
+        helperXlsx.write('./output/file.xlsx', file)
 
 # Salva o arquivo
 helperXlsx.write('./output/file.xlsx', file)
