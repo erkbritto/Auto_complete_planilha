@@ -7,7 +7,6 @@ from basics.get_file_name import get_file_name
 from basics.find_ticket_by_id import find_ticket_by_id
 from typing import List
 from basics.getAnalyzers import getAnalyzers
-from analyzer import ChatbotAnalyzer
 
 fileName:str = get_file_name()
 
@@ -29,7 +28,7 @@ for line in file[1:]:
     messages = find_ticket_by_id(line[INTERACTION_ID])
 
     # instancia o analisador
-    analyzers:List[ChatbotAnalyzer] = getAnalyzers()
+    analyzers = getAnalyzers()
     
     for analyzer in analyzers:
 
