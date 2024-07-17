@@ -1,5 +1,4 @@
 from typing import List
-from analyzer import ChatbotAnalyzer
 
-def getAnalyzers()->List[ChatbotAnalyzer]:
+def getAnalyzers():
     return[]
