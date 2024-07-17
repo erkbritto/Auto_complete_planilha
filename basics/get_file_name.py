@@ -7,6 +7,6 @@ def get_file_name() -> str:
 
     if not os.path.isfile(fileName):
         print(f"Arquivo '{fileName}' não encontrado.")
-        exit(1)
+        raise Exception(1)
         
     return fileName

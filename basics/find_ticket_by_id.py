@@ -37,8 +37,7 @@ def find_ticket_by_id(id) -> List[Message]:
             messages: List[Message] = []
 
             if not 'session' in data:
-                print('Error', id, data)
-                exit(1)
+                raise Exception('Error', id, data)
 
             segments = data['session']['segments']
             
