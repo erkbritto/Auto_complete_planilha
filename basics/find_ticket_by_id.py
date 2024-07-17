@@ -13,6 +13,7 @@ class Message(TypedDict):
 
 def find_ticket_by_id(id) -> List[Message]:
     while True:
+        print(f"find_ticket_by_id({id})")
         try:
             id = find_session_id(id)
                 
