@@ -1,0 +1,11 @@
+CPF inválido: {CPF incorreto, contendo pontos ou traços}
+Sem opção selecionada: {Nenhuma opção selecionada pelo usuário}
+Opções selecionadas:
+  - 1: Selecionou apenas 1 opção
+  - 2: Selecionou 2 opções no menu
+  - 3: Selecionou 3 opções no menu
+  - 4: Selecionou 4 opções no menu
+  - 5: Selecionou 5 opções no menu
+  - 6: Selecionou 6 opções no menu
+  - 7: Selecionou 7 opções no menu
+  - 8: Acima de 8 opções no menu
