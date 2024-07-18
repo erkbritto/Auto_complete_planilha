@@ -6,7 +6,14 @@ MESSAGE_WELCOME = "Seja bem-vindo(a) à Nio Digital!\n\nSou o Alê, seu assisten
 
 class Analyzer3 :
     def isValid(self, messages: List[Message]) -> bool:
-        return (len(messages) == 2) and (messages[0]['sender'] == 'client') and (messages[1]['sender'] == 'bot') and (messages[1]['message'] == MESSAGE_WELCOME)
+        
+        if not (len(messages) == 2):
+            return False
+
+        if not ((messages[1]['sender'] == 'bot') and (messages[1]['message'].startswith("Seja bem-vindo(a) à Nio Digital!"))):
+            return False
+
+        return True
 
     def getQualifications(self, messages: List[Message]) -> Qualification:
         return {
