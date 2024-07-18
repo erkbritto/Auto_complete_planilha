@@ -43,7 +43,7 @@ for index, line in enumerate(file):
         file[index][OPCAO_SELECIONADA] = qualifications['selectedOption']
         file[index][JORNADA_DO_CLIENTE_NO_CHATBOT] = qualifications['customerJourney']
         file[index][FINALIZACAO_DO_CONTATO] = qualifications['finalizationOfTheContract']
-        # file[index][ANALYZER_ID] = analyzerId
+        file[index][ANALYZER_ID] = analyzerId
         
         # Salva o arquivo a cada alteração
         # helperXlsx.write('./output/file.xlsx', file)
