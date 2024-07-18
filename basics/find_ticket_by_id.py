@@ -2,6 +2,13 @@ import requests
 from typing import List, Literal, TypedDict
 from basics.get_token import get_token, update_token
 from basics.find_session_id import find_session_id
+import pygame
+
+# Inicializar o mixer do pygame
+pygame.mixer.init()
+
+# Carregar o arquivo de som
+pygame.mixer.music.load("tf_nemesis.mp3")
 
 url = "https://api.talkdeskapp.com/virtual-agent/monitor/conversations/session"
 
@@ -15,7 +22,7 @@ def find_ticket_by_id(id) -> List[Message]:
     while True:
         print(f"find_ticket_by_id({id})")
         try:
-            id = find_session_id(id)
+            interactionId = find_session_id(id)
                 
             headers = {
                 "accept": "application/json, text/plain, */*",
@@ -32,7 +39,7 @@ def find_ticket_by_id(id) -> List[Message]:
                 "Referrer-Policy": "strict-origin-when-cross-origin"
             }
 
-            response = requests.get(f"{url}/{id}", headers=headers)
+            response = requests.get(f"{url}/{interactionId}", headers=headers)
             data = response.json()
             messages: List[Message] = []
 
@@ -54,5 +61,8 @@ def find_ticket_by_id(id) -> List[Message]:
 
             return messages
         except Exception as e:
+            # Reproduzir o som
+            pygame.mixer.music.play()
+
             print('Token inválido. Atualizando...', e)
             update_token()
