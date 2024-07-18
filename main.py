@@ -1,4 +1,4 @@
-from basics.helper_xlsx import HelperXlsx, INTERACTION_ID, OPCAO_SELECIONADA, JORNADA_DO_CLIENTE_NO_CHATBOT, FINALIZACAO_DO_CONTATO
+from basics.helper_xlsx import HelperXlsx, INTERACTION_ID, OPCAO_SELECIONADA, JORNADA_DO_CLIENTE_NO_CHATBOT, FINALIZACAO_DO_CONTATO, ANALYZER_ID
 from basics.get_file_name import get_file_name
 from basics.find_ticket_in_json import find_ticket_in_json
 from basics.getAnalyzers import getAnalyzers
@@ -27,7 +27,10 @@ for index, line in enumerate(file):
     # instancia o analisador
     analyzers = getAnalyzers()
     
-    for analyzer in analyzers:
+    for analyzerId, analyzer in enumerate(analyzers):
+
+        # Incrementa o id do analyzer
+        analyzerId+=1
 
         # Pula caso a estrutura não seja valida
         if not analyzer.isValid(messages):
@@ -40,9 +43,10 @@ for index, line in enumerate(file):
         file[index][OPCAO_SELECIONADA] = qualifications['selectedOption']
         file[index][JORNADA_DO_CLIENTE_NO_CHATBOT] = qualifications['customerJourney']
         file[index][FINALIZACAO_DO_CONTATO] = qualifications['finalizationOfTheContract']
+        # file[index][ANALYZER_ID] = analyzerId
         
         # Salva o arquivo a cada alteração
-        helperXlsx.write('./output/file.xlsx', file)
+        # helperXlsx.write('./output/file.xlsx', file)
         
         # Encerra o loop dos analyzers caso o ticket tenha sido validado
         break
