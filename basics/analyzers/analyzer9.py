@@ -18,6 +18,6 @@ class Analyzer9:
     def getQualifications(self, messages: List[Message]) -> Qualification:
         return {
             "selectedOption": 'Sem opção selecionada',
-            "customerJourney": 'Sem opção selecionada',
-            "finalizationOfTheContract": 'Sem interação- sem resposta do cliente',
+            "customerJourney": 'Sem opções selecionadas',
+            "finalizationOfTheContract": 'Sem interação - Sem resposta do cliente',
         }
