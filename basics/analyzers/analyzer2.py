@@ -9,11 +9,17 @@ MESSAGE__CAN_I_HELP_YOU = "Ótimo. Em que posso ajudar?\nㅤ *Digite a opção d
 class Analyzer2 :
 
     def isValid(self, messages: List[Message]) -> bool:
-        hasWelcomeMsg = messages[1]["message"] == MESSAGE_WELCOME and messages[1]["sender"] == 'bot'
-        has4Msg = len(messages) == 4
-        hasCanIHelYou = has4Msg and messages[3]["message"] == MESSAGE__CAN_I_HELP_YOU and messages[3]["sender"] == "bot"
-        isValid = hasWelcomeMsg and has4Msg and hasCanIHelYou
-        return isValid
+
+        if not(len(messages) == 4):
+            return False
+
+        if not(messages[1]["sender"] == 'bot' and messages[1]["message"].startswith("Seja bem-vindo(a) à Nio Digital!")):
+            return False
+
+        if not (messages[3]["sender"] == "bot" and messages[3]["message"].startswith("Ótimo. Em que posso ajudar?")):
+            return False
+        
+        return True
 
     def getQualifications(self, messages: List[Message]) -> Qualification:
         return {
