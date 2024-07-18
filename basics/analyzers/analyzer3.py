@@ -1,47 +1,16 @@
 from basics.find_ticket_by_id import Message
-from typing import List, Dict
+from typing import List
 from basics.qualification import Qualification
 
-class Analyzer2 :
+MESSAGE_WELCOME = "Seja bem-vindo(a) à Nio Digital!\n\nSou o Alê, seu assistente virtual.\n\nPara obter informações sobre os assuntos abaixo: \n\n- Adquirir o Cartão Nio\n- Consultar o status da sua proposta\n- Informações sobre Saque Parcelado\n- Atendimento para correspondentes Nio Digital\n- Órgãos/Empresas Conveniadas\nClique neste link:  https://api.whatsapp.com/send?phone=551130793682&text=Ol%C3%A1,%20NIO%20Digital\n\nAgora, se você já é cliente NIO Digital e deseja informações sobre o seu Cartão de Crédito Consignado, nosso horário de atendimento com especialistas é de segunda a sexta-feira, das 8h às 20h, exceto em feriados.\n\nPor favor, anote seu protocolo de atendimento: 1106202437d0d050c0. ㅤ\nPara iniciarmos seu atendimento, por favor informe o número do seu CPF. (apenas números)."
+
+class Analyzer3 :
     def isValid(self, messages: List[Message]) -> bool:
-        pass
+        return (len(messages) == 2) and (messages[0]['sender'] == 'client') and (messages[1]['sender'] == 'bot') and (messages[1]['message'] == MESSAGE_WELCOME)
 
     def getQualifications(self, messages: List[Message]) -> Qualification:
-        pass
-
-
-    def cpfNoResponse(conversation):
-        #id usado como exemplo de tratativa : 37d0d050c0b24194a85dbdaa883e156d
-        
-        if len(conversation) < 3:
-            return False
-        
-        # Verificar se a primeira mensagem é do usuário
-        if conversation[0]['sender'] != 'user':
-            return False
-        
-        # Verificar se a segunda mensagem é uma resposta automática do bot
-        if conversation[1]['sender'] != 'bot' or not conversation[1]['text'].startswith('Mensagem padrão automática'):
-            return False
-        
-        # Verificar se a terceira mensagem é uma solicitação de CPF do bot
-        if conversation[2]['sender'] != 'bot' or 'CPF' not in conversation[2]['text']:
-            return False
-        
-        # Verificar se não há resposta do usuário após a solicitação de CPF
-        for mensagem in conversation[3:]:
-            if mensagem['sender'] == 'user':
-                return False
-        
-        return True
-
-    # Exemplo de uso
-    con_exemplo = [
-        {'sender': 'user', 'text': 'Olá, eu preciso de ajuda.'},
-        {'sender': 'bot', 'text': 'Mensagem padrão automática: Bem-vindo! Como posso ajudar?'},
-        {'sender': 'bot', 'text': 'Por favor, forneça seu CPF para continuar.'},
-        # Nenhuma mensagem do usuário após a solicitação de CPF
-    ]
-
-
-print(cpfNoResponse(con_exemplo))  # Deve retornar True
+        return {
+            "selectedOption": 'Sem opção selecionada',
+            "customerJourney": 'Sem opções selecionadas',
+            "finalizationOfTheContract": 'Sem interação - Sem resposta do cliente',
+        }
