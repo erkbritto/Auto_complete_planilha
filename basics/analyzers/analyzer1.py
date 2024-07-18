@@ -22,7 +22,7 @@ class Analyzer1 :
     def getQualifications(self, messages: List[Message]) -> Qualification:
         isCPF = messages[4]["message"].isdigit() and len(messages[4]["message"]) == 11
         return {
-            "selectedOption": 'CPF enviado incorretamente/Inexistente (Não localizado na Orbitall' if isCPF else 'CPF enviado incorretamente (pontos e traços)',
+            "selectedOption": 'CPF enviado incorretamente/Inexistente (Não localizado na Orbitall)' if isCPF else 'CPF enviado incorretamente (pontos e traços)',
             "customerJourney": 'Sem opções selecionadas',
             "finalizationOfTheContract": 'Contato finalizado por falta de dados corretos',
         }
