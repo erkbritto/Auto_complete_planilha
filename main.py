@@ -16,7 +16,7 @@ for index, line in enumerate(file):
     
     if index == 0:
         continue
-    
+
     # Forma de obter(e definir os dados do ticket)
     messages = find_ticket_in_json(line[INTERACTION_ID])
 
@@ -41,8 +41,12 @@ for index, line in enumerate(file):
         file[index][JORNADA_DO_CLIENTE_NO_CHATBOT] = qualifications['customerJourney']
         file[index][FINALIZACAO_DO_CONTATO] = qualifications['finalizationOfTheContract']
         
-        # Salva o arquivo
+        # Salva o arquivo a cada alteração
         helperXlsx.write('./output/file.xlsx', file)
+        
+        # Encerra o loop dos analyzers caso o ticket tenha sido validado
+        break
 
-# Salva o arquivo
+
+# Salva o arquivo no fim da execução
 helperXlsx.write('./output/file.xlsx', file)
