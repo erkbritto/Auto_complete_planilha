@@ -1,6 +1,6 @@
 from basics.helper_xlsx import HelperXlsx, INTERACTION_ID, OPCAO_SELECIONADA, JORNADA_DO_CLIENTE_NO_CHATBOT, FINALIZACAO_DO_CONTATO
 from basics.get_file_name import get_file_name
-from basics.find_ticket_by_id import find_ticket_by_id
+from basics.find_ticket_in_json import find_ticket_in_json
 from basics.getAnalyzers import getAnalyzers
 
 fileName:str = get_file_name()
@@ -18,7 +18,7 @@ for index, line in enumerate(file):
         continue
     
     # Forma de obter(e definir os dados do ticket)
-    messages = find_ticket_by_id(line[INTERACTION_ID])
+    messages = find_ticket_in_json(line[INTERACTION_ID])
 
     # pula os vazios
     if not line[INTERACTION_ID]:
