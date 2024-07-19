@@ -3,7 +3,7 @@ from typing import List
 from basics.qualification import Qualification
 
 # c0890c557a474679acfabf130c607db3
-class Analyzer20:
+class Analyzer20: #não está pegando os dados e inserindo
     def isValid(self, messages: List[Message]) -> bool:
         if not (len(messages) == 20):
             return False
