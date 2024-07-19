@@ -3,35 +3,43 @@ from typing import List
 from basics.qualification import Qualification
 
 # 005713f499b24eb1a2091c482fe1bc9d
+
 class Analyzer15:
+
     def isValid(self, messages: List[Message]) -> bool:
-        if not (len(messages) == 16):
+        if not(len(messages) == 16):
             return False
         
-        # Verificar o protocolo de atendimento e o CPF
-        if not (messages[1]["sender"] == 'bot' and "Por favor, anote seu protocolo de atendimento" in messages[1]["message"]):
+        # Corrigir as mensagens para refletir corretamente os exemplos fornecidos
+        if not (messages[1]["sender"] == 'bot' and messages[1]["message"].startswith("Desculpe não entendi.")):
             return False
         
-        if not (messages[3]["sender"] == 'bot' and "Digite a op\u00e7\u00e3o desejada para" in messages[3]["message"]):
+        if not (messages[3]["sender"] == 'bot' and messages[3]["message"].startswith("Ótimo. Em que posso ajudar?")):
             return False
         
-        if not (messages[5]["sender"] == 'bot' and "Por favor informe os 4 \u00faltimos d\u00edgitos do cart\u00e3o que deseja consultar." in messages[6]["message"]):
+        if not (messages[5]["sender"] == 'bot' and messages[5]["message"].startswith("Por favor informe os 4 últimos dígitos")):
             return False
         
-        if not (messages[7]["sender"] == 'bot' and "Aqui est\u00e1 a sua \u00faltima fatura dispon\u00edvel" in messages[8]["message"]):
+        if not (messages[7]["sender"] == 'bot' and messages[7]["message"].startswith("*Tudo bem. Digite")):
             return False
         
-        if not (messages[9]["sender"] == 'bot' and "Digite a op\u00e7\u00e3o desejada para" in messages[10]["message"]):
+        if not (messages[9]["sender"] == 'bot' and messages[9]["message"].startswith("Aqui está a sua")):
             return False
         
-        if not (messages[9]["sender"] == 'bot' and messages[0]["message"].startswith("*Tudo bem. Digite a op\u00e7\u00e3o desejada para*:\n\n1 - Valor m\u00ednimo da fatura\n2 - \u00daltimas transa\u00e7\u00f5es\n3 - Segunda via da fatura\n4 - Informa\u00e7\u00e3o de pagamento\n5 - Diverg\u00eancia no valor do desconto em folha\n0 - Retornar ao menu anterior")):
+        if not (messages[11]["sender"] == 'bot' and messages[11]["message"].startswith("*Digite a opção desejada para*")):
+            return False
+        
+        if not (messages[13]["sender"] == 'bot' and messages[13]["message"].startswith("Por favor")):
+            return False
+        
+        if not (messages[15]["sender"] == 'bot' and messages[15]["message"].startswith("*Tudo bem")):
             return False
         
         return True
 
     def getQualifications(self, messages: List[Message]) -> Qualification:
         return {
-            "selectedOption": 'Opção 2',
-            "customerJourney": 'Selecionou 3 opções do menu',
+            "selectedOption": 'Opção 3',
+            "customerJourney": 'Selecionou 4 opções do menu',
             "finalizationOfTheContract": 'Sem interação - Sem resposta do cliente',
         }
