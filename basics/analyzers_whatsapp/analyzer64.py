@@ -77,8 +77,8 @@ class Analyzer64 :
             allMessages: List[Message],
         ) -> Qualification:
         return {
-            "selectedOption": '',
-            "customerJourney": '',
+            "selectedOption": 'Opção 10',
+            "customerJourney": 'Selecionou 7 opções no menu',
             "finalizationOfTheContract": 'nao qualificado',
         }
     

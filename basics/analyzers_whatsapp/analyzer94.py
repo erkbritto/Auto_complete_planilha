@@ -38,8 +38,8 @@ class Analyzer94 :
             allMessages: List[Message],
         ) -> Qualification:
         return {
-            "selectedOption": '',
-            "customerJourney": '',
+            "selectedOption": 'Opção 3',
+            "customerJourney": 'Selecionou 2 opções do menu',
             "finalizationOfTheContract": 'nao qualificado',
         }
     

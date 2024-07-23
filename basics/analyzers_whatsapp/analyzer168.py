@@ -26,8 +26,8 @@ class Analyzer168 :
             allMessages: List[Message],
         ) -> Qualification:
         return {
-            "selectedOption": '',
-            "customerJourney": '',
+            "selectedOption": 'Sem opção selecionada',
+            "customerJourney": 'Sem opções selecionadas',
             "finalizationOfTheContract": 'nao qualificado',
         }
     
