@@ -19,6 +19,7 @@ from basics.analyzers.analyzer17 import Analyzer17
 from basics.analyzers.analyzer18 import Analyzer18
 from basics.analyzers.analyzer19 import Analyzer19
 from basics.analyzers.analyzer20 import Analyzer20
+from basics.analyzers.analyzer21 import Analyzer21
 
 
 def getAnalyzers():
@@ -43,5 +44,6 @@ def getAnalyzers():
         Analyzer18(),
         Analyzer19(),
         Analyzer20(),
+        Analyzer21(),
         
     ]
