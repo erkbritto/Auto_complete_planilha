@@ -20,7 +20,7 @@ class Analyzer11:
 
     def getQualifications(self, messages: List[Message]) -> Qualification:
         return {
-            "selectedOption": '',
-            "customerJourney": '',
-            "finalizationOfTheContract": '',
+            "selectedOption": 'Sem opção selecionada',
+            "customerJourney": 'Sem opções selecionadas',
+            "finalizationOfTheContract": 'Contato encerrado com script de finalização.',
         }

@@ -7,7 +7,6 @@ from basics.qualification import Qualification
 class Analyzer2 :
 
     def isValid(self, messages: List[Message]) -> bool:
-
         if not(len(messages) == 4):
             return False
 
@@ -21,7 +20,7 @@ class Analyzer2 :
 
     def getQualifications(self, messages: List[Message]) -> Qualification:
         return {
-            "selectedOption": 'Sem opção selecionada',
-            "customerJourney":'Sem opções selecionadas',
+            "selectedOption": 'Opção 3',
+            "customerJourney":'Selecionou 3 opções do menu',
             "finalizationOfTheContract": 'Sem interação - Sem resposta do cliente',
         }
