@@ -75,5 +75,3 @@ def find_ticket_in_json(interactionId: str) -> List[Message]:
     
     return chats
 
-    main3()
-
