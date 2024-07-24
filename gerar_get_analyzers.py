@@ -6,7 +6,7 @@ def gerar_get_analyzers(numero):
         # Escreve o cabeçalho do arquivo
         f.write('from typing import List\n')
         for i in range(numero):
-            f.write(f'from basics.analyzers_whatsapp.analyzer{i+1} import Analyzer{i+1}\n')
+            f.write(f'from basics.analyzers_autopilot_usuario.analyzer{i+1} import Analyzer{i+1}\n')
         
         # Escreve a função getAnalyzers
         f.write('def getAnalyzers():\n')
