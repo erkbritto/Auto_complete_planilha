@@ -3,6 +3,7 @@ from basics.get_file_name import get_file_name
 from basics.find_ticket_in_json import find_ticket_in_json
 from basics.find_ticket_agent_in_json import find_ticket_agent_in_json
 from basics.getAnalyzers2 import getAnalyzers
+from basics.getFinalizationOfTheContract import getFinalizationOfTheContract
 
 fileName:str = get_file_name()
 
@@ -25,10 +26,13 @@ for index, line in enumerate(file):
     # pula os vazios
     if not line[INTERACTION_ID]:
         continue
+    
+    # if not(line[INTERACTION_ID] == '6cab1a0715f64fb39906c078e9896cf9'):
+    #     continue
 
     # pula os vazios
-    # if not (line[INTERACTION_ID] == '70f62ed74c894ad9a118d2213c694aab'):
-    #     continue
+    if (line[INTERACTION_ID] in ['d9172fbd076bc3fcfba48934dec9d260', '5c0a946ed07d7002fe6071f9299751e3', '7b6e7223b675179754b874ed059d0e1b']):
+        continue
 
     # instancia o analisador
     analyzers = getAnalyzers()
@@ -48,7 +52,7 @@ for index, line in enumerate(file):
         # Insere as qualificações no ticket
         file[index][OPCAO_SELECIONADA] = qualifications['selectedOption']
         file[index][JORNADA_DO_CLIENTE_NO_CHATBOT] = qualifications['customerJourney']
-        file[index][FINALIZACAO_DO_CONTATO] = qualifications['finalizationOfTheContract']
+        file[index][FINALIZACAO_DO_CONTATO] = getFinalizationOfTheContract(messagesBot, allMessages)
         file[index][ANALYZER_ID] = analyzerId
         
         # Salva o arquivo a cada alteração
@@ -56,7 +60,6 @@ for index, line in enumerate(file):
         
         # Encerra o loop dos analyzers caso o ticket tenha sido validado
         break
-
 
 # Salva o arquivo no fim da execução
 helperXlsx.write('./output/file2.xlsx', file)

@@ -1,6 +1,12 @@
 from typing import TypedDict
 from typing import Literal
 
+FinalizationOfTheContract = Literal[
+    'Contato encerrado com script de finalização.',
+    'Contato finalizado por falta de dados corretos',
+    'Sem interação - Sem resposta do cliente',
+]
+
 class Qualification(TypedDict):
 
     selectedOption:Literal[
@@ -32,8 +38,4 @@ class Qualification(TypedDict):
         'Acima de 8 opções no menu',
     ]
 
-    finalizationOfTheContract:Literal[
-        'Contato encerrado com script de finalização.',
-        'Contato finalizado por falta de dados corretos',
-        'Sem interação - Sem resposta do cliente',
-    ]
+    finalizationOfTheContract:FinalizationOfTheContract
