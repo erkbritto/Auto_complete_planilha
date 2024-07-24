@@ -15,7 +15,7 @@ class Analyzer2 :
         if not (len(messagesclient) == 10):
             return False
     
-        if not (messagesclient[0]["sender"] == "client" and messagesclient[0]["message"].startswith("Bom-dia  recebi o meu cartão , gostaria de saber qual é o limite dele")):
+        if not (messagesclient[0]["sender"] == "client" and messagesclient[0]["message"].startswith("Bom-dia  recebi o meu cartÃ£o , gostaria de saber qual Ã© o limite dele")):
             return False
     
         if not (messagesclient[2]["sender"] == "client" and messagesclient[2]["message"].startswith("32182627120")):
