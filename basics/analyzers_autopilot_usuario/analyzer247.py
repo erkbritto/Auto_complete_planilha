@@ -80,8 +80,8 @@ class Analyzer247 :
             allMessages: List[Message],
         ) -> Qualification:
         return {
-            "selectedOption": '',
-            "customerJourney": '',
-            "finalizationOfTheContract": '',
+            "selectedOption": 'Opção 7',
+            "customerJourney": 'Acima de 8 opções no menu',
+            "finalizationOfTheContract": 'Contato encerrado com script de finalização.',
         }
     
