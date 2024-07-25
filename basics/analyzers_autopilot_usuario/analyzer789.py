@@ -2,7 +2,7 @@ from basics.find_ticket_by_id import Message
 from typing import List
 from basics.qualification import Qualification
 
-# 7ce37c1388d848d2b4b6323b6e31b36a
+#           
 
 class Analyzer789 :
 
@@ -47,8 +47,8 @@ class Analyzer789 :
             allMessages: List[Message],
         ) -> Qualification:
         return {
-            "selectedOption": '',
-            "customerJourney": '',
-            "finalizationOfTheContract": '',
+            "selectedOption": 'Opção 1',
+            "customerJourney": 'Selecionou 2 opções do menu',
+            "finalizationOfTheContract": 'Sem interação - Sem resposta do cliente',
         }
     
