@@ -60,7 +60,7 @@ class Analyzer300 :
         ) -> Qualification:
         return {
             "selectedOption": 'Opção 10',
-            "customerJourney": 'Selecionou 4 opções do menu',
+            "customerJourney": 'Selecionou 5 opções do menu',
             "finalizationOfTheContract": 'Sem interação - Sem resposta do cliente',
         }
     
