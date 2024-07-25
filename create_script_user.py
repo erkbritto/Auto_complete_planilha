@@ -40,6 +40,8 @@ class Analyzer{numeroAnalyzer} :
                 if text.startswith('Por favor aguarde um instante enquanto processamos sua solicitação')
                 else 'O seu código de rastreio é o'
                 if text.startswith('O seu código de rastreio é o')
+                else 'O valor mínimo é de'
+                if text.startswith('O valor mínimo é de')
                 else text[:100]
             )
             # Adiciona a condição ao código

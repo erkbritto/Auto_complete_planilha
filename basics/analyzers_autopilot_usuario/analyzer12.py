@@ -66,7 +66,7 @@ class Analyzer12 :
         if not (messagesClient[33]["sender"] == "bot" and messagesClient[33]["message"].startswith("*Tudo bem. Digite a opção desejada para*:\n\n1 - Valor mínimo da fatura\n2 - Últimas transações\n3 -")):
             return False
     
-        if not (messagesClient[35]["sender"] == "bot" and messagesClient[35]["message"].startswith("O valor mínimo é de R$236.00, e será descontado automaticamente em folha de pagamento.\nPara efetuar")):
+        if not (messagesClient[35]["sender"] == "bot" and messagesClient[35]["message"].startswith("O valor mínimo é de")):
             return False
     
         if not (messagesClient[37]["sender"] == "bot" and messagesClient[37]["message"].startswith("Aqui está a sua última fatura disponível")):
