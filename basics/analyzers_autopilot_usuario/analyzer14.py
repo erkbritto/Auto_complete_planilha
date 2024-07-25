@@ -26,8 +26,8 @@ class Analyzer14 :
             allMessages: List[Message],
         ) -> Qualification:
         return {
-            "selectedOption": '',
-            "customerJourney": '',
-            "finalizationOfTheContract": '',
+            "selectedOption": 'Sem opção selecionada',
+            "customerJourney": 'Sem opções selecionadas',
+            "finalizationOfTheContract": 'Contato finalizado por falta de dados corretos',
         }
     

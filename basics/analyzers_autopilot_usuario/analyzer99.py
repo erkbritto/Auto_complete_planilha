@@ -44,8 +44,8 @@ class Analyzer99 :
             allMessages: List[Message],
         ) -> Qualification:
         return {
-            "selectedOption": '',
-            "customerJourney": '',
-            "finalizationOfTheContract": '',
+            "selectedOption": 'Opção 2',
+            "customerJourney": 'Selecionou 2 opções do menu',
+            "finalizationOfTheContract": 'Contato encerrado com script de finalização.',
         }
     

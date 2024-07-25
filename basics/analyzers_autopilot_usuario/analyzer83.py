@@ -55,6 +55,6 @@ class Analyzer83 :
         return {
             "selectedOption": 'Opção 1',
             "customerJourney": 'Selecionou 4 opções do menu',
-            "finalizationOfTheContract": '',
+            "finalizationOfTheContract": 'Contato encerrado com script de finalização.',
         }
     

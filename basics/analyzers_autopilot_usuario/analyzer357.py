@@ -38,8 +38,8 @@ class Analyzer357 :
             allMessages: List[Message],
         ) -> Qualification:
         return {
-            "selectedOption": '',
-            "customerJourney": '',
-            "finalizationOfTheContract": '',
+            "selectedOption": 'Opção 0',
+            "customerJourney": 'Selecionou apenas 1 opção',
+            "finalizationOfTheContract": 'Sem interação - Sem resposta do cliente',
         }
     
