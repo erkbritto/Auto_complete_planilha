@@ -18,31 +18,33 @@ class Analyzer{numeroAnalyzer} :
 
     def isValid(
         self,
-        messagesclient: List[Message],
+        messagesClient: List[Message],
         allMessages: List[Message],
     ) -> bool:
 
-        if not (len(messagesclient) == {len(messages)}):
+        if not (len(messagesClient) == {len(messages)}):
             return False
     '''
 
     # Loop através das mensagens para criar as condições de validação
     for i, message in enumerate(messages):
-        if message['sender'] == 'client':
+        if message['sender'] == 'bot':
             text = message['message'].replace("\n", "\\n")
             # Determina o texto de condição com base no início da mensagem
             condition_text = (
-                "olá"
-                if text.startswith("olá")
-                else "Bom dia"
-                if text.startswith("Bom dia")
-                else "Nio Digital"
-                if text.startswith("Nio Digital")
+                "Seguem as informações solicitadas"
+                if text.startswith("Seguem as informações solicitadas")
+                else 'Aqui está a sua última fatura disponível'
+                if text.startswith('Aqui está a sua última fatura disponível')
+                else 'Por favor aguarde um instante enquanto processamos sua solicitação'
+                if text.startswith('Por favor aguarde um instante enquanto processamos sua solicitação')
+                else 'O seu código de rastreio é o'
+                if text.startswith('O seu código de rastreio é o')
                 else text[:100]
             )
             # Adiciona a condição ao código
             condition = f'''
-        if not (messagesclient[{i}]["sender"] == "client" and messagesclient[{i}]["message"].startswith("{condition_text}")):
+        if not (messagesClient[{i}]["sender"] == "bot" and messagesClient[{i}]["message"].startswith("{condition_text}")):
             return False
     '''
             code += condition
@@ -53,13 +55,13 @@ class Analyzer{numeroAnalyzer} :
 
     def getQualifications(
             self,
-            messagesclient: List[Message],
+            messagesClient: List[Message],
             allMessages: List[Message],
         ) -> Qualification:
         return {
             "selectedOption": '',
             "customerJourney": '',
-            "finalizationOfTheContract": 'nao qualificado',
+            "finalizationOfTheContract": '',
         }
     '''
     return code
