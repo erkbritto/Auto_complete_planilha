@@ -32,8 +32,8 @@ class Analyzer1052 :
             allMessages: List[Message],
         ) -> Qualification:
         return {
-            "selectedOption": '',
-            "customerJourney": '',
-            "finalizationOfTheContract": '',
+            "selectedOption": 'CPF enviado incorretamente/Inexistente (Não locali…',
+            "customerJourney": 'Sem opções selecionadas',
+            "finalizationOfTheContract": 'Contato finalizado por falta de dados corretos',
         }
     
